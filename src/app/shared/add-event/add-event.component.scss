@@ -1,0 +1,98 @@
+.dialogs {
+    // background: #181818;
+    // /* The Fallback */
+    // background: rgba(24, 24, 24, 0.6);
+    z-index: 14;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .verticalAlign {
+        display: table;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+
+        .verticalCenter {
+            display: table-cell; // text-align: center;
+            vertical-align: middle;
+
+            .dialogContainer {
+                border-style: solid;
+                border-width: 1px;
+                border-image-source: linear-gradient(238deg, rgba(36, 140, 165, 0), #248ca5);
+                border-image-slice: 1;
+                border-radius: 3px;
+                box-shadow: 0 0 10px 0 rgba(0, 206, 255, .1);
+                background: #003a49;
+                color: #fff;
+                padding: 0;
+                height: 580px;
+                max-width: 550px;
+                margin: 0 auto;
+
+                input,
+                select {
+                    color: #fff;
+                    width: 100%;
+                    margin-top: 8px;
+                    border-radius: 3px;
+                    border: solid 1px #004456;
+                    background-color: #003240;
+                    height: 40px;
+                    padding: 0 1.5rem;
+
+                    &.disabled {
+                        opacity: 0.6;
+                    }
+                }
+
+                .popup-header {
+                    padding-top: 20px;
+                    position: relative;
+
+                    .title {
+                        font-size: 1.5rem;
+                        text-align: center;
+                        margin: 0;
+                    }
+
+                    .button-right {
+                        position: absolute;
+                        right: 20px;
+                        bottom: 10px;
+                    }
+
+                    .close-img {
+                        height: 20px;
+                    }
+
+                    .boarder-line {
+                        border-bottom: 1px solid;
+                        margin-top: 5px;
+                    }
+                }
+
+                .popup-content {
+                    padding: 20px;
+
+                    .form-group {
+                        margin-bottom: 15px;
+                    }
+
+                    .button-wrapper {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+    }
+}

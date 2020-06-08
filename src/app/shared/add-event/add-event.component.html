@@ -1,0 +1,56 @@
+<div class="dialogs" *ngIf="showDialog.isOpen">
+  <div class="verticalAlign">
+    <div class="verticalCenter">
+      <div class="dialogContainer">
+        <section class="popup-header">
+          <h1 class="title">Add Event</h1>
+          <button class="clear-button button-right" (click)="closePopUp()">
+            <img class="close-img" src="assets/images/cross.svg" alt="close icon" />
+          </button>
+          <div class="boarder-line">
+          </div>
+        </section>
+        <div class="popup-content">
+          <form class="" [formGroup]="eventForm" novalidate>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" value="" name="title" formControlName="title" placeholder="Event Title" />
+            </div>
+            <div class="form-group">
+              <label for="title">Type</label>
+              <select formControlName="type">
+                <option ngValue="primary">
+                  Primary
+                </option>
+                <option ngValue="secondary">
+                  Secondary
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="title">Date</label>
+              <input type="text" value="" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" formControlName="date"
+                placeholder="MM/DD/YYYY" disabled />
+              <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+            </div>
+            <div class="form-group">
+              <label for="title">Start Time</label>
+              <input type="text" value="" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" formControlName="startTime"
+                placeholder="00:00" />
+              <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
+            </div>
+            <div class="form-group">
+              <label for="title">End Time</label>
+              <input type="text" value="" [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3" formControlName="endTime"
+                placeholder="00:00" />
+              <owl-date-time [pickerType]="'timer'" #dt3></owl-date-time>
+            </div>
+            <div class="button-wrapper">
+              <button (click)="createEvent()" type="submit" class="create-btn" [disabled]='!eventForm.valid'>
+                Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

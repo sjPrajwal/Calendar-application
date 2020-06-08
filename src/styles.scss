@@ -1,0 +1,82 @@
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+
+/************************** Generic Styles override *******************/
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #06191E;
+  color: #fff;
+  font: normal 1.5rem Arial, sans-serif;
+}
+
+.p-reset {
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.clear-button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+label {
+  font-size: 1.3rem;
+}
+
+
+.create-btn {
+  -webkit-box-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-transition: .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  background-color: #248ca5;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .72);
+  color: #fff;
+  cursor: pointer;
+  font: 1rem Arial, sans-serif;
+  height: 42px;
+  min-width: 85px;
+  padding: 0 15px;
+}
+
+button:disabled,
+button[disabled] {
+  opacity: 0.5
+}
+
+/**** Time picker button color overriding ******/
+
+.owl-dt-control-button {
+  color: black !important;
+}

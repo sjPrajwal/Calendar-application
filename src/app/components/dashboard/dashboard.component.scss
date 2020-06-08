@@ -1,0 +1,267 @@
+.calender-wrapper {
+    padding: 20px;
+    display: flex;
+
+    .calenadr-view {
+        flex-basis: 70%;
+    }
+
+    .event-listing {
+        flex-basis: 30%;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5) 36%, rgba(0, 0, 0, 0));
+        font-size: 0.9rem;
+
+        .events {
+            padding: 10px;
+            text-align: center;
+
+            .date-display {
+                margin-bottom: 20px;
+            }
+
+            .date-display,
+            .time-display {
+                color: #248ca5;
+                font-weight: bold;
+            }
+
+            .event-list-item {
+                position: relative;
+                text-align: left;
+                height: 100px;
+                background-color: #000;
+                padding: 15px 20px;
+                margin-bottom: 10px;
+
+                .remove-button {
+                    position: absolute;
+                    right: 15px;
+                    top: 15px;
+                    cursor: pointer;
+                }
+
+                .event-title {
+                    margin-bottom: 15px;
+
+                    &.primary {
+                        &::before {
+                            background-color: #1565c0;
+                            border-radius: 3px;
+                            content: '';
+                            display: inline-block;
+                            height: 10px;
+                            margin-right: 5px;
+                            width: 10px;
+                        }
+                    }
+
+                    &.secondary {
+                        &::before {
+                            background-color: #cc1824;
+                            border-radius: 3px;
+                            content: '';
+                            display: inline-block;
+                            height: 10px;
+                            margin-right: 5px;
+                            width: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /********************* Overriding the calendar styles *************/
+    
+    ::ng-deep {
+        .cal-month-view {
+            background: #000;
+            font-size: 1.5rem;
+        }
+
+        .cal-month-view .cal-header {
+            text-align: end;
+            color: #444444;
+            padding: 5px 0px;
+            border-top: solid 1px rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+
+            @media screen and (max-width: 767px) {
+                font-size: 1rem;
+            }
+        }
+
+        .cal-month-view .cal-header .cal-cell {
+            padding: 5px 10px;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            display: block;
+            white-space: nowrap;
+        }
+
+        .cal-month-view .cal-days {
+            border: none;
+        }
+
+        .cal-month-view .cal-cell-row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            -js-display: flex;
+            display: flex;
+            border: solid 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .cal-month-view .cal-cell {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            -js-display: flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cal-month-view .cal-cell-row:hover {
+            background-color: transparent;
+        }
+
+        .cal-month-view .cal-cell-row .cal-cell:hover,
+        .cal-month-view .cal-cell.cal-has-events.cal-open {
+            background-color: transparent;
+        }
+
+        @media all and (-ms-high-contrast: none) {
+            .cal-month-view .cal-day-cell {
+                display: block;
+            }
+        }
+
+        .cal-month-view .cal-day-number {
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-align: end;
+        }
+
+        .cal-month-view .cal-day-cell {
+            border-right: solid 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .cal-month-view .cal-day-cell.cal-today {
+            background-color: transparent;
+            border: 2px solid grey;
+            border-right: 1px solid;
+            border-right: 2px solid grey !important;
+            border-radius: 5px;
+        }
+
+        .cal-month-view .cal-cell-row .cal-day-cell:last-child {
+            border: none;
+        }
+
+
+        .cal-month-view .cal-day-cell.cal-out-month .cal-day-number {
+            color: #4d5151;
+        }
+
+        .cal-month-view .cal-day-cell .cal-cell-top {
+            position: relative;
+            height: 95px;
+            width: 100%;
+            padding: 5px 1rem 1rem;
+            cursor: pointer;
+
+            @media screen and (max-width: 768px) {
+                padding: .5rem;
+                height: 85px;
+            }
+
+            @media screen and (max-width: 450px) {
+                height: 60px;
+            }
+        }
+
+        .cal-month-view .cal-cell-top.selected {
+            border: solid 1px #248ca5;
+        }
+
+        .indicator {
+            width: 10%;
+            margin-right: 3px;
+        }
+
+        .cal-month-view .cal-cell-top {
+            border: solid 1px transparent;
+        }
+
+        .cal-month-view .cal-cell-wrapper {
+            width: 100%;
+        }
+
+        .cal-month-view .cal-day-cell .cal-cell-top .event-wrapper {
+            width: 100%;
+            flex-direction: row !important;
+
+            .event-indicator {
+                height: 13px;
+                border-radius: 3px;
+                display: flex;
+                align-items: center;
+                padding: 0 3px;
+
+                :hover {
+                    .remove-button {
+                        display: block;
+                    }
+                }
+
+                .remove-button {
+                    margin-left: auto;
+                    cursor: pointer;
+                    display: none;
+
+                    @media screen and (max-width: 768px) {
+                        background: #ff0402;
+                        height: 18px;
+                        width: 18px;
+                        position: relative;
+                        left: 9px;
+                        padding: 3px;
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    height: 6px;
+
+                    p {
+                        font-size: 10px;
+                    }
+                }
+
+                @media screen and (max-width: 450px) {
+                    border-radius: 1px;
+
+                    p {
+                        font-size: 8px;
+                    }
+                }
+            }
+
+
+            .event-indicator.secondary {
+                background: #cc1824;
+            }
+
+            .event-indicator.primary {
+                background: #1565c0;
+            }
+
+        }
+    }
+}

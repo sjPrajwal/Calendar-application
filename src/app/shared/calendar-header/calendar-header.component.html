@@ -1,0 +1,19 @@
+<div class="calendar-page-header">
+  <div class="info-group" fxLayoutAlign="flex-start center">
+    <div class="year-control" fxLayoutAlign="space-between center">
+      <div mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate)" class="icon-wrapper" fxLayoutAlign="center center">
+        <img src="assets/images/left-arrow.svg" alt="backwards" class="control-arrow">
+      </div>
+      <div class="month-year">
+        <p class="month p-reset">{{viewDate | date:'MMMM' : undefined : lang }}</p>
+        <p class="year p-reset">{{viewDate | date:'yyyy'}}</p>
+      </div>
+      <div mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="viewDateChange.next(viewDate)"
+        class="icon-wrapper" fxLayoutAlign="center center">
+        <img src="assets/images/right-arrow.svg" alt="fordwards" class="control-arrow">
+      </div>
+    </div>
+  </div>
+  <a (click)="createEvents()" class="link-reset create-btn">Create Event</a>
+</div>

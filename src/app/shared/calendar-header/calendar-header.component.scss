@@ -1,0 +1,50 @@
+.calendar-page-header {
+    padding: 15px 20px;
+    background: #000;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .year-control {
+        width: 195px;
+        margin-right: 5px;
+
+        .month {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: .4rem;
+        }
+
+        .year {
+            font-size: 1.2rem;
+            text-align: center;
+            opacity: .5;
+        }
+
+        .control-arrow {
+            height: 14px;
+            width: auto;
+        }
+
+
+
+        .icon-wrapper {
+            height: 30px;
+            width: 30px;
+            border-radius: 15px;
+            user-select: none;
+            cursor: pointer;
+
+            &:hover {
+                background: lighten(#181818, 10%);
+            }
+        }
+    }
+
+    .link-reset {
+        text-decoration: none;
+    }
+}

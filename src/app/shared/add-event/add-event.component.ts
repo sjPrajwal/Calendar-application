@@ -13,7 +13,7 @@ export class AddEventComponent implements OnInit {
 
   showDialog: any = {};
   eventForm: FormGroup;
-  i = 0;
+  min = new Date();
 
   constructor(
     private addEventService: AddEventService,

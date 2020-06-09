@@ -35,8 +35,8 @@
             </div>
             <div class="form-group">
               <label for="title">Start Time</label>
-              <input type="text" value="" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" formControlName="startTime"
-                placeholder="00:00" />
+              <input type="text" value="" [min]="min" [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"
+                formControlName="startTime" placeholder="00:00" />
               <owl-date-time [pickerType]="'timer'" #dt2></owl-date-time>
             </div>
             <div class="form-group">

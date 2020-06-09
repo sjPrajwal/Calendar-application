@@ -14,7 +14,8 @@
           </div>
           <div *ngIf="day.events.length !== 0" class="event-wrapper" fxLayout="column" fxLayoutAlign="flex-end center">
             <span *ngFor="let event of day.events" class="indicator">
-              <span [ngClass]="'event-indicator '+event.type">
+              <span [tooltip]="event.title" placement="top" show-delay="500" theme="light"
+                [ngClass]="'event-indicator '+event.type">
               </span>
             </span>
           </div>

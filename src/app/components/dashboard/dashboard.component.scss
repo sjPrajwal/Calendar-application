@@ -72,7 +72,7 @@
     }
 
     /********************* Overriding the calendar styles *************/
-    
+
     ::ng-deep {
         .cal-month-view {
             background: #000;
@@ -80,7 +80,7 @@
         }
 
         .cal-month-view .cal-header {
-            text-align: end;
+            font-size: 1.2rem;
             color: #444444;
             padding: 5px 0px;
             border-top: solid 1px rgba(255, 255, 255, 0.1);

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AddEventService } from 'src/app/services/add-event.service';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-event',
@@ -15,13 +17,13 @@ export class AddEventComponent implements OnInit {
 
   constructor(
     private addEventService: AddEventService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
     this.initializeForm();
     this.addEventService.getEventDetais().subscribe(result => {
-      console.log(result);
       this.showDialog = result;
     })
   }
@@ -37,6 +39,13 @@ export class AddEventComponent implements OnInit {
     });
   }
 
+  createEvent() {
+    this.eventForm.value.id = uuidv4();
+    this.addEventService.setEventDetails(this.eventForm.value);
+    this.toastr.success('Event successfully added !', 'Success');
+    this.closePopUp();
+  }
+
   closePopUp() {
     this.resetForm();
     this.showDialog.isOpen = false;
@@ -45,12 +54,6 @@ export class AddEventComponent implements OnInit {
   resetForm() {
     this.eventForm.reset();
     this.eventForm.controls['type'].setValue('primary');
-  }
-
-  createEvent() {
-    this.eventForm.value.id = this.i++;
-    this.addEventService.setEventDetails(this.eventForm.value);
-    this.closePopUp();
   }
 
 }

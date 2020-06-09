@@ -1,5 +1,7 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 @import "~ng-pick-datetime/assets/style/picker.min.css";
+@import '~ngx-toastr/toastr';
+
 
 
 /************************** Generic Styles override *******************/
@@ -79,4 +81,9 @@ button[disabled] {
 
 .owl-dt-control-button {
   color: black !important;
+}
+
+/**** Toast container font size overriding ******/
+.toast-container .ngx-toastr {
+  font-size: 1rem;
 }

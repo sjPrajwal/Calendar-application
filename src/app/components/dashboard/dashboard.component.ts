@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { CalendarDateFormatter } from 'angular-calendar';
 import { CustomDateFormatter } from './date.formater';
 import { AddEventService } from 'src/app/services/add-event.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashboard',
@@ -28,7 +29,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private cd: ChangeDetectorRef,
-    private addEventService: AddEventService
+    private addEventService: AddEventService,
+    private toastr: ToastrService
   ) {
   }
 
@@ -63,6 +65,7 @@ export class DashboardComponent implements OnInit {
       if (event.id == deletingEvent.id) {
         this.events.splice(index, 1);
         this.refresh.next();
+        this.toastr.success('Event successfully deleted !', 'Success');
         return;
       }
     })

@@ -9,6 +9,8 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
+import { TooltipModule } from 'ng2-tooltip-directive';
+import { ToastrModule } from 'ngx-toastr';
 
 /****************Components******************/
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +37,8 @@ import { AddEventComponent } from './shared/add-event/add-event.component';
     ReactiveFormsModule,
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
+    TooltipModule,
+    ToastrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,

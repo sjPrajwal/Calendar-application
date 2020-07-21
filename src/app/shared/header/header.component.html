@@ -1,5 +1,16 @@
 <div class="header-bg">
-    <div class="half-width brand-wrapper">
-        <h1 class="brand-name">Calendar Application</h1>
+  <div class="half-width brand-wrapper">
+    <h1 class="brand-name">Student</h1>
+  </div>
+  <div class="half-width sort-field">
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select the sort
+        <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a (click)="sort('Scrore')">Scrore</a></li>
+        <li><a (click)="sort('Attendace')">Attendace</a></li>
+        <li><a (click)="sort('Grade')">Grade</a></li>
+      </ul>
     </div>
+  </div>
 </div>

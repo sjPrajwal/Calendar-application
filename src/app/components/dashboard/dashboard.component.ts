@@ -27,6 +27,8 @@ export class DashboardComponent implements OnInit {
   lang: string = 'en';
   selectedDate: any = '';
 
+  arrmy = ['a', 'b', 'c', 's', 'f', 'a', 'b', 'c', 's', 'f', 'a', 'b',];
+
   constructor(
     private cd: ChangeDetectorRef,
     private addEventService: AddEventService,
@@ -36,7 +38,18 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getEvents();
+    this.practiceJavascript();
   }
+
+
+  practiceJavascript() {
+    var srr = this.arrmy.reduce((unique, item, index) =>
+      unique.includes(item) ? unique : [...unique, item],[]
+    )
+
+    console.log(srr);
+  }
+
 
   getEvents(): void {
     this.addEventService.getEventDetails().subscribe(result => {

@@ -1,0 +1,39 @@
+.student-list {
+    width: 100%;
+    margin-top: 10px;
+
+    .student-item {
+        padding: 10px;
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+
+        .image {
+            width: 15%;
+            display: inline-block;
+
+            .image-size {
+                width: 100px;
+            }
+        }
+
+        .details {
+            width: 60%;
+            display: inline-block;
+        }
+
+        .grade {
+            width: 25%;
+            display: inline-block;
+            text-align: center;
+
+            .grade-box {
+                border: 1px solid;
+                border-radius: 50%;
+                width: 100px;
+                padding: 14px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="student-list">
+  <div class="student-item" *ngFor="let student of studentList.students">
+    <div class="image">
+      <img class="image-size" src="assets\images\user.jpg" alt="">
+    </div>
+    <div class="details">
+      <p>Name : <span>{{student.name}}</span></p>
+      <p>Dept : <span>{{student.dept}} </span></p>
+      <p>Score : <span>{{student.score}} %</span></p>
+      <p>Attandance : <span>{{student.attendance
+    }} %</span></p>
+    </div>
+    <div class="grade">
+      <div class="grade-box">
+        Grade
+        <p>{{student.grade
+        }}</p>
+      </div>
+    </div>
+  </div>
+</div>

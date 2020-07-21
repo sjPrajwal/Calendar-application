@@ -19,6 +19,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CalendarHeaderComponent } from './shared/calendar-header/calendar-header.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AddEventComponent } from './shared/add-event/add-event.component';
+import { StudentListComponent } from './components/student-list/student-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AddEventComponent } from './shared/add-event/add-event.component';
     DashboardComponent,
     CalendarHeaderComponent,
     HeaderComponent,
-    AddEventComponent
+    AddEventComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,
